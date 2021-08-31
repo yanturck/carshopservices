@@ -4,16 +4,20 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.21.1",
     "bootstrap": "^5.0.0-beta3",
     "bootstrap-icons": "^1.5.0",
     "consign": "^0.1.6",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.3"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   },
-  "author": "AgamenonJR",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "AndreC and AgamenonJR and YanRP",
   "license": "ISC"
 }
