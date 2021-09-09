@@ -30,12 +30,14 @@ class User {
         .catch(function (error) { console.log("\nAlgo deu errado! :*(\n" + error) });
     }
 
+    // está retornando um objeto vazio
    findConsumerByEmail (email) {
         this.axios.get(`http://${this.ip}:${this.port}/usuarios/consumidor/${email}`)
         .then(function (response) { console.log(response.data) })
         .catch(function (error) { console.log("\nAlgo deu errado! :*(\n" + error) });
     }
 
+    // está retornando um objeto vazio
    findProducerByEmail (email) {
         this.axios.get(`http://${this.ip}:${this.port}/usuarios/produtor/${email}`)
         .then(function (response) { console.log(response.data) })

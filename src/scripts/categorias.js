@@ -18,6 +18,12 @@ class Categorias {
         .catch(function (error) { console.log("\nAlgo deu errado! :*(\n" + error) });
     }
 
+    // findName (name) {
+    //     this.axios.get(`http://${this.ip}:${this.port}/categorias/${name}`)
+    //     .then(function (response) { console.log(response.data) })
+    //     .catch(function (error) { console.log("\nAlgo deu errado! :*(\n" + error) });
+    // }
+
     deleteCategory (id) {
         this.axios.delete(`http://${this.ip}:${this.port}/categorias/${id}`)
         .then(function (response) { console.log(response.data) })
