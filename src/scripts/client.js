@@ -14,44 +14,8 @@ const ad = new Anuncio(axios, ip, port);
 const solicit = new Solicitacao(axios, ip, port);
 
 module.exports = {
-    user: user
+    user: user,
+    cat: cat,
+    ad: ad,
+    solicit: solicit
 };
-
-// var form = document.getElementById('formCadastro');
-// var nome = document.getElementById('txtNome');
-
-// form.addEventListener('submit', function(e) => {
-//     alert(nome.value);
-
-//     e.preventDefault();
-// });
-// cat.create({
-//     nome: 'eletronicos',
-//     descricao: 'Produtos do ramo eletronico!'
-// });
-
-// ad.createItem({
-//     'descricao': 'pois é!',
-//     'valor': 2.50,
-//     'idCategoria': 2,
-//     'nome': 'Arduino Uno',
-//     'disponibilidade': true,
-//     'disponibilidadeEntrega': 'Somente retiradas'
-// });
-
-// ad.findAllItems();
-
-// ad.createServico({
-//     'descricao': 'hajdgshaj',
-//     'valor': 10,
-//     'idCategoria': 2,
-//     'nome': 'Arduino Uno',
-//     'disponibilidadeRealizacao': 'Em qualquer lugar!',
-// });
-
-// ad.findAllServicos();
-
-// ad.findAll();
-
-// ad.findServicoByCategory(2);
-

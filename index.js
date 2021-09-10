@@ -24,47 +24,57 @@ app.get('/quem-somos', (req, res) => {
 });
 
 app.get('/cadastro', (req, res) => {
+    res.render(__dirname+'/views/layouts/cadastro.handlebars');
+});
+app.get('/login', (req, res) => {
+    res.render(__dirname+'/views/layouts/login.handlebars');
+});
+
+app.post('/cadastro-user', (req, res) => {
     var nome = req.body.txtNome;
     var email = req.body.txtEmail;
     var fone = req.body.txtFone;
     var senha = req.body.txtSenha;
 
-    User.user.createConsumidor({
-        'email': email,
-        'nome': nome,
-        'telefone': fone,
-        'senha': senha,
-        'cpf': cpf
-    });
+    var conta = req.body.tipoConta;
 
-    // var tipoConta = document.getElementById("tipoConta");
-    // var conta = tipoConta.options[tipoConta.selectedIndex].value;
-
-    // if (conta == '1') {
-    //     var cpf = document.getElementById('txtCPF');
-    //     // User.user.createConsumidor({
-    //     //     'email': email.value,
-    //     //     'nome': nome.value,
-    //     //     'telefone': fone.value,
-    //     //     'senha': senha.value,
-    //     //     'cpf': cpf.value
-    //     // });
-    // } else if (conta == '2') {
-    //     var cnpj = document.getElementById('txtCNPJ');
-    //     var nFan = document.getElementById('txtNFan');
-    //     var cep = document.getElementById('txtCEP');
-    //     User.user.createProdutor({
-    //         'email': email.value,
-    //         'nome': nome.value,
-    //         'telefone': fone.value,
-    //         'senha': senha.value,
-    //         'cnpj': cnpj.value,
-    //         'local': cep.value,
-    //         'fantasiaNome': nFan.value
-    //     });
-
+    switch (conta) {
+        case '1':
+            var cpf = req.body.txtCPF;
+            User.user.createConsumidor({
+                'email': email,
+                'nome': nome,
+                'telefone': fone,
+                'senha': senha,
+                'cpf': cpf
+            });
+            break;
+        case '2':
+            var cnpj = req.body.txtCNPJ;
+            var nFan = req.body.txtNFan;
+            var cep = req.body.txtCEP;
+            User.user.createProdutor({
+                'email': email,
+                'nome': nome,
+                'telefone': fone,
+                'senha': senha,
+                'cnpj': cnpj,
+                'local': cep,
+                'fantasiaNome': nFan
+            });
+            break;
+        default:
+            break;
+    }
+    res.render(__dirname+'/views/layouts/confirme-cad.handlebars');
 });
 
+app.post('/login-user', (req, res) => {
+    var email = req.body.email;
+    
+    const userLog = User.user.findUserByEmail(email);
+    console.log();
+});
 
 //consign().include('routes').into(app);//inclui todos os arquivos INTO em app
 
