@@ -1,0 +1,52 @@
+<%- include('./partials/header.ejs'); %>
+
+<main class="flex-fill">
+    <div class="container">
+        <h2>Minha Conta</h2>
+        <div class="row gx-3 mb-5">
+            <!--Menu da Esquerda-->
+            <%- include('./partials/menu_adm.ejs'); %>
+            <div class="col-8 mb-5">
+                <form action="">
+                    
+                    <div class="form-floating mb-3">
+                        <input class="form-control" type="text" id="txtEmail" placeholder=" " autofocus />
+                        <label for="txtEmail">Titulo Produto/Serviço</label>
+                    </div>
+
+
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" name="txtDescricao" id="txtDescricao" placeholder="" style="height: 200px;" ></textarea>
+                        <label for="txtDescricao">Descrição</label>
+                    </div>
+
+                    <div class="form-floating mb-3 col-md-8">
+                        <select class="form-select form-select-sm">
+                            <option selected value="1">Produto Novo</option>
+                            <option value="2">Produto Usado</option>
+                            <option value="3">Serviços</option>                                         
+                        </select>
+                        <label for="txtDescricao">Categoria</label>
+                    </div>
+
+                    <div class="form-floating mb-3 col-md-8">
+                        <input class="form-control" type="file" id="txtImagens" placeholder=" " />
+                        <label for="txtImagens">Imagens</label>
+                    </div>
+
+                    <div class="form-floating mb-3 col-md-8">
+                        <input class="form-control" type="number" id="txtValor" placeholder=" " />
+                        <label for="txtValor">Valor</label>
+                    </div>
+
+
+                    <div class="form-floating mb-3 col-md-6 col-xl-4">
+                        <button type="submit" class="btn btn-success">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>     
+    </div>
+</main>
+
+<%- include('./partials/footer.ejs'); %>

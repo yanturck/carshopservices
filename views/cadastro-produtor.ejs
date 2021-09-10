@@ -1,0 +1,71 @@
+<%- include('./partials/header.ejs'); %>
+
+<main class="flex-fill">
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <form action="" method="post" class="col-sm-10 col-md-8 col-lg-6">
+                <h4>Cadastrar-se como Produtor </h4>
+                <small>Preencha seus dados corretamente e junte-se a nossa comunidade </small>
+                <br>
+
+                <div class="form-floating mb-3 mt-3">
+                    <input class="form-control" type="text" id="txtNome" placeholder=" " autofocus />
+                    <label for="txtNome">Nome</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="email" id="email" class="form-control" placeholder="" autofocus>
+                    <label for="email">E-mail</label>
+                </div>
+
+                <div class="form-floating mb-3 col-md-6 col-xl-6">
+                    <input class="form-control" type="text" id="txtCPF" placeholder=" " />
+                    <label for="txtCPF">CNPJ</label>
+                </div>
+
+                <div class="form-floating mb-3 col-md-6 col-xl-6">
+                    <input class="form-control" type="text" id="txtCPF" placeholder=" " />
+                    <label for="txtCPF">Nome Fantasia</label>
+                </div>
+
+                <div class="form-floating mb-3 col-md-6 col-xl-6">
+                    <input class="form-control" type="text" id="txtTelefone" placeholder="" />
+                    <label for="txtTelefone">Telefone</label>
+                </div>
+
+                <div class="form-floating mb-3 col-md-6 col-lg-4">
+                    <textarea class="form-control text-muted bg-light texto"
+                        placeholder="Preencha corretamente seu endereço" style="min-height: 120px; min-width: 420px;">
+                                   Informe  seu endereço
+                                </textarea>
+
+                </div>
+
+                <div class="form-floating mb-3 col-md-6 col-xl-4">
+                    <input class="form-control" type="text" id="txtNumero" placeholder=" " />
+                    <label for="txtNumero">Número</label>
+                </div>
+
+                <div class="form-floating mb-3 col-md-6 col-xl-4">
+                    <input class="form-control" type="text" id="txtComplemento" placeholder=" " />
+                    <label for="txtComplemento">Complemento</label>
+                </div>
+
+                <div class="form-floating mb-3 col-md-6 col-xl-4">
+                    <input class="form-control" type="text" id="txtptreferencia" placeholder=" " value="" />
+                    <label for="txtptreferencia">Ponto de referência</label>
+
+                </div>
+
+                <button type="button" class="btn btn-md btn-success"
+                    onclick="window.location.href='/confirme-cadastro.html'">Efetuar Cadastro</button>
+                <p class="mt-3">Ainda não é Cadastrado ? <a href="/cadastro-produtor.html">Clique aqui</a> e aproveite o
+                    sistema</p>
+            </form>
+        </div>
+
+    </div>
+</main>
+
+<%- include('./partials/footer.ejs'); %>

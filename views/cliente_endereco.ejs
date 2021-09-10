@@ -1,0 +1,43 @@
+<%- include('./partials/header.ejs'); %>
+
+<main class="flex-fill">
+    <div class="container">
+        <h2>Minha Conta</h2>
+        <div class="row gx-3 mb-5">
+            <!--Menu da Esquerda-->
+            <%- include('./partials/menu_adm.ejs'); %>
+            <div class="col-8 mb-5">
+                
+                <form action="">
+                    
+
+                    <div class="form-floating mb-3 col-md-6 col-lg-4">
+                        <textarea class="form-control text-muted bg-light texto" style="min-height: 120px;" >
+                    Preencha corretamente o seu endereço
+                        </textarea>
+                    </div>
+
+                    <div class="form-floating mb-3 col-md-6 col-xl-4">
+                        <input class="form-control" type="text" id="txtNumero" placeholder=" " />
+                        <label for="txtNumero">Número</label>
+                    </div>
+
+                    <div class="form-floating mb-3 col-md-6 col-xl-4">
+                        <input class="form-control" type="text" id="txtComplemento" placeholder=" " />
+                        <label for="txtComplemento">Complemento</label>
+                    </div>
+
+                    
+                    
+
+                    <div class="form-floating mb-3 col-md-6 col-xl-4">
+                        <button type="submit" class="btn btn-warning">Alterar Dados</button>
+                    </div>
+                </form>
+                
+            </div>
+        </div>     
+    </div>
+</main>
+
+<%- include('./partials/footer.ejs'); %>

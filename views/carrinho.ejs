@@ -1,0 +1,107 @@
+<%- include('partials/header.ejs'); %>
+<main class="flex-fill">
+    <div class="container">
+        <h2 class="mb-4" >Carrinho de compras</h2>
+        <ul class="list-group mb-3">
+            <li class="list-group-item py-3">
+                <div class="row g-3">
+                    <div class="col-4 col-md-3 col-lg-2">
+                        <a href="#">
+                            <img src="img/img11.jpg" class="img-thumbnail" alt="">
+                        </a>
+                    </div>
+
+                    <div class="col-8 col-md-9 col-lg-7 col-xl-8 text-left align-self-center">
+                        
+                        <h4>
+                            <b><a href="#" class="text-decoration-none text-dark">Banco Ford</a></b>
+                        </h4>
+                        <h5>
+                            Jogo de bancos Ford Fusion Titanium 2015/16 automáticos em couro , em perfeito estado e funcionamento
+                        </h5>                                    
+                    </div>
+
+                    <div class="col-6 offset-6 col-sm-6 offset-sm-6 col-md-4 offset-md8 col-lg-3 offset-lg-0 col-xl-2 align-self-center mt-3">
+
+                        <div class="input-group">
+                            <button class="btn btn-outline-dark btn-sm" type="button"><i class="bi-caret-down icone-pequeno"></i></button>
+                            <input type="text" class="form-control text-center border-dark" value="5" >
+                            <button class="btn btn-outline-dark btn-sm" type="button"><i class="bi-caret-up icone-pequeno"></i></button>
+                            <button class="btn btn-outline-danger border-dark" type="button"><i class="bi-trash icone-pequeno"></i></button>
+                          </div>
+
+                          <div class="text-end mt-2">
+                              <small class="text-secondary">Valor Unitário: R$ 500,00</small>
+                              <br>
+                              <span class="text-dark">Valor total : R$ 2500,00</span>
+                          </div>
+
+                    </div>
+
+
+                </div>
+
+            </li>
+
+            <li class="list-group-item py-3">
+                <div class="row g-3">
+                    <div class="col-4 col-md-3 col-lg-2">
+                        <a href="#">
+                            <img src="img/img12.jpg" class="img-thumbnail" alt="">
+                        </a>
+                    </div>
+
+                    <div class="col-8 col-md-9 col-lg-7 col-xl-8 text-left align-self-center">
+                        
+                        <h4>
+                            <b><a href="#" class="text-decoration-none text-dark">Pistão</a></b>
+                        </h4>
+                        <h5>
+                           Pistão, em perfeito estado e funcionamento
+                        </h5>                                    
+                    </div>
+
+                    <div class="col-6 offset-6 col-sm-6 offset-sm-6 col-md-4 offset-md8 col-lg-3 offset-lg-0 col-xl-2 align-self-center mt-3">
+
+                        <div class="input-group">
+                            <button class="btn btn-outline-dark btn-sm" type="button"><i class="bi-caret-down icone-pequeno"></i></button>
+                            <input type="text" class="form-control text-center border-dark" value="5" >
+                            <button class="btn btn-outline-dark btn-sm" type="button"><i class="bi-caret-up icone-pequeno"></i></button>
+                            <button class="btn btn-outline-danger border-dark" type="button"><i class="bi-trash icone-pequeno"></i></button>
+                          </div>
+
+                          <div class="text-end mt-2">
+                              <small class="text-secondary">Valor Unitário: R$ 50,00</small>
+                              <br>
+                              <span class="text-dark">Valor total : R$ 250,00</span>
+                          </div>
+
+                    </div>
+
+
+                </div>
+
+            </li>
+
+
+            <li class="list-group-item pt-3 pb-0">
+                <div class="text-end">
+                    <h4 class="text-dark mb-3">
+                        Valor Total: R$ 2750,00
+                    </h4>
+                    <a href="/" class="btn btn-outline-success btn-lg mb-3">Continuar Comprando</a>
+                    
+                    <a href="/cliente_pedidos" class="btn btn-outline-danger btn-lg ms-2 mt-3 mt-sm-0 mb-3">Fechar Compra</a>
+
+                    
+
+
+                </div>
+
+            </li>
+            
+          </ul>
+
+    </div>
+</main>
+<%- include('partials/footer.ejs'); %>

@@ -1,0 +1,42 @@
+body{
+    min-width: 372px;
+}
+.icone{
+    font-size: 24px;
+    line-height: 24px;
+}
+.icone-pequeno{
+    font-size: 16px;
+    line-height: 16px;
+}
+.wrapper{
+    min-height: 100vh;
+}
+main h2{
+    text-transform: capitalize;
+}
+img.cartao{
+    max-height: 200px;
+    min-height: 200px;
+}
+img.produto{
+    max-height: 400px;
+    min-height: 400px;
+}
+img.min-produto{
+    max-height: 80px;
+    min-height: 80px;
+}
+.card-body{
+    min-height: 120px;
+}
+p.truncar{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.texto{
+    min-height: 80px; font-size: 14px; background-color: brown;
+}

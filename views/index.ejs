@@ -1,0 +1,308 @@
+<%- include('./partials/header.ejs'); %>
+            <div class="container">
+                <div id="carousel-principal" class="carousel slide d-none d-md-block" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button
+                            type="button"
+                            data-bs-target="#carousel-principal"
+                            data-bs-slide-to="0"
+                            class="active"
+                            aria-label="Slide 1"
+                        ></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="2000">
+                            <img src="img/ferramentas.jpg" class="d-none d-md-block w-100" alt="...">
+                            <img src="img/ferramentas-pequeno.jpg" class="d-block d-md-none w-100" alt="...">
+                        </div>
+                        <button
+                            class="carousel-control-prev"
+                            type="button"
+                            data-bs-target="#carousel-principal"
+                            data-bs-slide="prev"
+                        >
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button
+                            class="carousel-control-next"
+                            type="button"
+                            data-bs-target="#carousel-principal"
+                            data-bs-slide="next"
+                        >
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Proximo</span>
+                        </button>
+                    </div>
+                </div>
+                <main class="flex-fill">
+                    <div class="container">
+                        <div class="row mt-2 mb-3">
+                            <div class="col-12 col-md-5">
+                                <form action="" class="justify-content-center justify-content-md-start mb-3 mb-md-0" method="post">
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="form-control" placeholder=" o que está procurando ?">
+                                        <button type="submit" class="btn btn-success">
+                                            <i class="bi-search"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-12 col-md-7">
+                                <div class="d-flex flex-row-reverse justify-content-center justify-content-md-start">
+                                    <form action="" class="d-inline-block" method="post">
+                                        <select class="form-select form-select-sm">
+                                            <option selected>ordenar pelo nome </option>
+                                            <option value="1"></option>
+                                            <option value="1">ordenar menor preço</option>
+                                            <option value="2">ordenar maior preço</option>
+                                            <option value="3">ordenar mais indicados</option>
+                                        </select>
+                                    </form>
+                                    <nav class="d-inline-block me-3">
+                                        <ul class="pagination pagination-sm my-0">
+                                            <li class="page-item">
+                                                <a href="#" class="page-link">1</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a href="#" class="page-link">2</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a href="#" class="page-link">3</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a href="#" class="page-link">4</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a href="#" class="page-link">5</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="mt-3">
+
+                        <!--teste usuario do banco -->
+
+                         <% usuarios.forEach(usuario =>{ %>
+                            <span>olá <b><%= usuario.nome %> </b></span>
+                        <% }); %>
+                        <!---->
+
+                        <div class="row g-3">
+
+                            
+
+
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-3">
+                                <div class="card text-center bg-light">
+                                    <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                        <i class="bi-suit-heart icone"></i>
+                                    </a>
+                                    <a href="/produto" class="text-decoration-none">
+                                        <img src="img/cabecote-ap.jpg" class="card-img-top cartao img-fluid">
+                                    </a>
+                                    <div class="card-header">
+                                        R$ 150,00
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <a href="/produto" class="text-decoration-none">Cabeçote turbo</a>
+                                        </h5>
+                                        <p class="card-text truncar">
+                                            cabeçote AP tucho mecânico, completo
+                                    pronto pra montar
+                                        </p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="/carrinho" class="btn btn-primary mt-2 d-block">Adicionar ao Carrinho</a>
+                                    </div>
+                                    <small class="text-success"> 10 em estoque</small>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-3">
+                                <div class="card text-center bg-light">
+                                    <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                        <i class="bi-suit-heart icone"></i>
+                                    </a>
+                                    <a href="produto" class="text-decoration-none">
+                                        <img src="img/img2.jpeg" class="card-img-top cartao img-fluid">
+                                    </a>
+                                    <div class="card-header">
+                                        R$ 150,00
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Cabeçote turbo</h5>
+                                        <p class="card-text truncar">
+                                            cabeçote AP tucho mecânico, completo
+                                    pronto pra montar
+                                        </p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="/carrinho" class="btn btn-danger disabled mt-2 d-block">Adicionar ao Carrinho</a>
+                                    </div>
+                                    <small class="text-danger"> Produto Esgotado</small>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-3">
+                                <div class="card text-center bg-light">
+                                    <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                        <i class="bi-suit-heart-fill icone"></i>
+                                    </a>
+                                    <a href="/produto" class="text-decoration-none">
+                                        <img src="img/img3.jpg" class="card-img-top cartao img-fluid">
+                                    </a>
+                                    <div class="card-header">
+                                        R$ 150,00
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <a href="/produto" class="text-decoration-none">Cabeçote turbo</a>
+                                        </h5>
+                                        <p class="card-text truncar">
+                                            cabeçote AP tucho mecânico, completo
+                                    pronto pra montar
+                                        </p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="/carrinho" class="btn btn-primary mt-2 d-block">Adicionar ao Carrinho</a>
+                                    </div>
+                                    <small class="text-success"> 10 em estoque</small>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-3">
+                                <div class="card text-center bg-light">
+                                    <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                        <i class="bi-suit-heart icone"></i>
+                                    </a>
+                                    <a href="produto" class="text-decoration-none">
+                                        <img src="img/img4.jpg" class="card-img-top cartao img-fluid">
+                                    </a>
+                                    <div class="card-header">
+                                        R$ 150,00
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <a href="/produto" class="text-decoration-none">Cabeçote turbo</a>
+                                        </h5>
+                                        <p class="card-text truncar">
+                                            cabeçote AP tucho mecânico, completo
+                                    pronto pra montar
+                                        </p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="/carrinho" class="btn btn-primary mt-2 d-block">Adicionar ao Carrinho</a>
+                                    </div>
+                                    <small class="text-success"> 10 em estoque</small>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-3">
+                                <div class="card text-center bg-light">
+                                    <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                        <i class="bi-suit-heart icone"></i>
+                                    </a>
+                                    <a href="produto" class="text-decoration-none">
+                                        <img src="img/img5.jpg" class="card-img-top cartao img-fluid">
+                                    </a>
+                                    <div class="card-header">
+                                        R$ 150,00
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <a href="/produto" class="text-decoration-none">Cabeçote turbo</a>
+                                        </h5>
+                                        <p class="card-text truncar">
+                                            cabeçote AP tucho mecânico, completo
+                                    pronto pra montar
+                                        </p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="/carrinho" class="btn btn-primary mt-2 d-block">Adicionar ao Carrinho</a>
+                                    </div>
+                                    <small class="text-success"> 10 em estoque</small>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-3">
+                                <div class="card text-center bg-light">
+                                    <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                        <i class="bi-suit-heart icone"></i>
+                                    </a>
+                                    <a href="/produto" class="text-decoration-none">
+                                        <img src="img/img6.jpg" class="card-img-top cartao img-fluid">
+                                    </a>
+                                    <div class="card-header">
+                                        R$ 150,00
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <a href="/produto" class="text-decoration-none">Cabeçote turbo</a>
+                                        </h5>
+                                        <p class="card-text truncar">
+                                            cabeçote AP tucho mecânico, completo
+                                    pronto pra montar
+                                        </p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="/carrinho" class="btn btn-primary mt-2 d-block">Adicionar ao Carrinho</a>
+                                    </div>
+                                    <small class="text-success"> 10 em estoque</small>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-3">
+                                <div class="card text-center bg-light">
+                                    <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                        <i class="bi-suit-heart icone"></i>
+                                    </a>
+                                    <a href="/produto" class="text-decoration-none">
+                                        <img src="img/img9.png" class="card-img-top cartao img-fluid">
+                                    </a>
+                                    <div class="card-header">
+                                        R$ 150,00
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <a href="/produto" class="text-decoration-none">Cabeçote turbo</a>
+                                        </h5>
+                                        <p class="card-text truncar">
+                                            cabeçote AP tucho mecânico, completo
+                                    pronto pra montar
+                                        </p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="/carrinho" class="btn btn-primary mt-2 d-block">Adicionar ao Carrinho</a>
+                                    </div>
+                                    <small class="text-success"> 10 em estoque</small>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-3">
+                                <div class="card text-center bg-light">
+                                    <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                        <i class="bi-suit-heart icone"></i>
+                                    </a>
+                                    <a href="/produto" class="text-decoration-none">
+                                        <img src="img/img8.jpg" class="card-img-top cartao">
+                                    </a>
+                                    <div class="card-header">
+                                        R$ 150,00
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <a href="/produto" class="text-decoration-none">Cabeçote turbo</a>
+                                        </h5>
+                                        <p class="card-text truncar">
+                                            cabeçote AP tucho mecânico, completo
+                                    pronto pra montar
+                                        </p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <a href="/carrinho" class="btn btn-primary mt-2 d-block">Adicionar ao Carrinho</a>
+                                    </div>
+                                    <small class="text-success"> 10 em estoque</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <%- include('./partials/footer.ejs'); %>
