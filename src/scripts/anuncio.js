@@ -31,8 +31,8 @@ class Anuncio {
     }
     
     findAll () {
-        this.axios.get(`http://${this.ip}:${this.port}/anuncios`)
-        .then(function (response) { console.log(response.data) })
+        return this.axios.get(`http://${this.ip}:${this.port}/anuncios`)
+        .then(function (response) { return response.data })
         .catch(function (error) { console.log("\nAlgo deu errado! :*(\n" + error) });
     }
     

@@ -7,13 +7,12 @@
             <!--Menu da Esquerda-->
             <%- include('./partials/menu_adm.ejs'); %>
             <div class="col-8 mb-5">
-                <form action="">
+                <form action="/create-anuncio" method="POST">
                     
                     <div class="form-floating mb-3">
-                        <input class="form-control" type="text" id="txtEmail" placeholder=" " autofocus />
+                        <input class="form-control" type="text" name="txtNome" placeholder=" " autofocus />
                         <label for="txtEmail">Titulo Produto/Serviço</label>
                     </div>
-
 
                     <div class="form-floating mb-3">
                         <textarea class="form-control" name="txtDescricao" id="txtDescricao" placeholder="" style="height: 200px;" ></textarea>
@@ -21,12 +20,8 @@
                     </div>
 
                     <div class="form-floating mb-3 col-md-8">
-                        <select class="form-select form-select-sm">
-                            <option selected value="1">Produto Novo</option>
-                            <option value="2">Produto Usado</option>
-                            <option value="3">Serviços</option>                                         
-                        </select>
-                        <label for="txtDescricao">Categoria</label>
+                        <input class="form-control" type="number" name="txtValor" placeholder=" " />
+                        <label for="txtValor">Valor</label>
                     </div>
 
                     <div class="form-floating mb-3 col-md-8">
@@ -35,10 +30,53 @@
                     </div>
 
                     <div class="form-floating mb-3 col-md-8">
-                        <input class="form-control" type="number" id="txtValor" placeholder=" " />
-                        <label for="txtValor">Valor</label>
+                        <select class="form-select form-select-sm" name='txtCat'>
+                            <% cats.forEach( (cat) => { %>
+                                <option value='<%= cat.id %>' ><%= cat.nome %></option>
+                            <% }) %>
+                        </select>
+                        <label for="txtDescricao">Categoria</label>
                     </div>
 
+                    <div class="form-floating mb-3 col-md-8">
+                        <select class="form-select form-select-sm" name='txtTipo' onchange="selTipo(this)">
+                            <option selected disabled>Tipo de Conta</option>
+                            <option value="1">Produto</option>
+                            <option value="2">Serviços</option>                                         
+                        </select>
+                        <label for="txtDescricao">Tipo do Anúncio</label>
+                    </div>
+
+                    <script>
+                        function selTipo (tipo) {
+                            switch(tipo.value){
+                                case '1':
+                                    document.getElementById("continuar").innerHTML = '<div class="form-floating mb-3 col-md-8">\n' +
+                                            '<input class="form-control" type="number" name="txtDisp" placeholder=" " />\n' +
+                                            '<label for="txtImagens">Disponibilidade</label>\n' +
+                                        '</div>\n' +
+                                        '<div class="form-floating mb-3 col-md-8">\n' +
+                                            '<select class="form-select form-select-sm" name="txtDispEntrega">\n' +
+                                                '<option selected value="1">Entrega delivery</option>\n' +
+                                                '<option value="2">Somente retiradas no local</option>\n' +
+                                            '</select>\n' +
+                                            '<label for="txtDescricao">Disponibilidade Entrega</label>\n' +
+                                        '</div>';
+                                    break;
+                                case '2':
+                                    document.getElementById("continuar").innerHTML = '<div class="form-floating mb-3 col-md-8">\n' +
+                                            '<select class="form-select form-select-sm" name="txtDispRealizacao">\n' +
+                                                '<option selected value="1">Realização apenas no local</option>\n' +
+                                                '<option value="2">Realização em qualquer lugar</option>\n' +
+                                            '</select>\n' +
+                                            '<label for="txtDescricao">Disponibilidade de Realização</label>\n' +
+                                        '</div>';
+                                    break;
+                            }
+                        }
+                    </script>
+
+                    <div id="continuar"></div>
 
                     <div class="form-floating mb-3 col-md-6 col-xl-4">
                         <button type="submit" class="btn btn-success">Cadastrar</button>

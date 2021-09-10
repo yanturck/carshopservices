@@ -25,15 +25,19 @@ class User {
     }
 
    findAll () {
-        this.axios.get(`http://${this.ip}:${this.port}/usuarios/all`)
-        .then(function (response) { console.log(response.data) })
+        return this.axios.get(`http://${this.ip}:${this.port}/usuarios/all`)
+        .then(function (response) {
+            return response.data
+        })
         .catch(function (error) { console.log("\nAlgo deu errado! :*(\n" + error) });
     }
 
     // está retornando um objeto vazio
    findConsumerByEmail (email) {
-        this.axios.get(`http://${this.ip}:${this.port}/usuarios/consumidor/${email}`)
-        .then(function (response) { console.log(response.data) })
+        return this.axios.get(`http://${this.ip}:${this.port}/usuarios/consumidor/${email}`)
+        .then(function (response) { 
+            return response.data
+        })
         .catch(function (error) { console.log("\nAlgo deu errado! :*(\n" + error) });
     }
 
@@ -45,8 +49,8 @@ class User {
     }
 
    findUserByEmail (email) {
-        this.axios.get(`http://${this.ip}:${this.port}/usuarios/${email}`)
-        .then(function (response) { console.log(response.data) })
+        return this.axios.get(`http://${this.ip}:${this.port}/usuarios/${email}`)
+        .then(function (response) { return response.data })
         .catch(function (error) { console.log("\nAlgo deu errado! :*(\n" + error) });
     }
 }

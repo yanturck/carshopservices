@@ -13,8 +13,10 @@ class Categorias {
     }
 
     findAll () {
-        this.axios.get(`http://${this.ip}:${this.port}/categorias`)
-        .then(function (response) { console.log(response.data) })
+        return this.axios.get(`http://${this.ip}:${this.port}/categorias`)
+        .then(function (response) {
+            return response.data
+        })
         .catch(function (error) { console.log("\nAlgo deu errado! :*(\n" + error) });
     }
 
