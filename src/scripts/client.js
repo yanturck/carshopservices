@@ -1,10 +1,10 @@
 const axios = require('axios');
 
-const User = require('./user');
-const Categorias = require('./categorias');
-const Anuncio = require('./anuncio');
-const Solicitacao = require('./solicitacao');
-const GuardarSolicitacao = require('./guardar-solicitacao');
+const User = require('../clients/user.client');
+const Categorias = require('../clients/categorias.client');
+const Anuncio = require('../clients/anuncio.client');
+const Solicitacao = require('../clients/solicitacao.client');
+const GuardarSolicitacao = require('../clients/guardar-solicitacao.client');
 // const { canTreatArrayAsAnd } = require('sequelize/types/lib/utils');
 
 const ip = '127.0.0.1';
