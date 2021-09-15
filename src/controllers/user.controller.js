@@ -47,8 +47,8 @@ exports.auntenticar = (req, res) => {
 
     client.user.autenticarUser(user).then(data => {
         if(data == 'ok') {
-            res.render("cliente_pedidos");
             client.logado = true;
+            res.render("cliente_pedidos");
         }
         else {
             res.render("log");

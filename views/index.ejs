@@ -1,4 +1,8 @@
-<%- include('./partials/header.ejs'); %>
+<% if(logado == true) { %>
+    <%- include('./partials/header_log.ejs'); %>
+<% } else { %>
+    <%- include('./partials/header.ejs'); %>
+<% } %>
             <div class="container">
                 <div id="carousel-principal" class="carousel slide d-none d-md-block" data-bs-ride="carousel">
                     <div class="carousel-indicators">

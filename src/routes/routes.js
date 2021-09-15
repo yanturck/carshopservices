@@ -2,41 +2,17 @@ const client = require('../scripts/client');
 
 module.exports = app => {
     app.get('/', (req, res) => {
-
-        // model_cadastro.findAll({raw:true,order:[
-        //     ['id','DESC']// ORDEM DECRECENTE
-        // ]}).then(usuarios=>{
-        //     console.log(usuarios);
-        //     res.render("index",{
-        //         usuarios:usuarios,
-        //     });
-        // });
-    
-        client.ad.findAll().then( data => {
-            res.render('index', {
-                // usuario: data
-                produtos: data
-             }); 
-        });
-        
-        //CARREGAR A PAGINA HOME - INDEX
-        var sobrenome = req.params.sobrenome
-        var nome = "agamenon";
-        var lang = "Javascript";
-        
-        var produtos = [
-            {nome:"motor",preco:1000.0,descricao:"Motor em perfeito estado",estoque:15},
-            {nome:"jogo de rodas",preco:200.5,descricao:"jogo de rodas Usado",estoque:2},
-            {nome:"cabecote",preco:500.0,descricao:"cabecote em perfeito estado",estoque:5},
-        ] 
-       /**
-        res.render('index',{
-            nome:nome,
-            lang:lang,
-            sobrenome:sobrenome,
-            produtos:produtos
-        }); */
-    
+        client.user.verificarUser().then( data1 => {
+            client.user.findUserByEmail(data1.email).then( data2 => {
+                client.ad.findAll().then( data3 => {
+                    res.render('index', {
+                        usuario: data2,
+                        produtos: data3,
+                        logado: client.logado
+                        });
+                });
+            })
+        })
     });
     
     app.get('/quem-somos', (req, res) => {

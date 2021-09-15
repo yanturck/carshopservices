@@ -53,17 +53,6 @@
                                 <a class="nav-link text-white" href="/promocoes">Promoções</a>
                             </li> -->
                                     
-                        <div class="align-self-end">
-                            <ul class="navbar-nav">
-                                <script>
-                                    const client = require('../../src/scripts/client');
-                                    
-                                    if (client.logado == true){
-
-                                    } else {
-
-                                    }
-                                </script>
                                 <!-- <li class="nav-item">
                                     <a href="/cadastro" class="nav-link">Cadastrar-se</a>
                                 </li> -->
@@ -74,11 +63,13 @@
                                 <!-- <li class="nav-item">
                                     <a href="/login" class="nav-link">Entrar</a>
                                 </li> -->
+                        <div class="align-self-end">
+                            <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">Olá Agamenon S N</a>
+                                    <a href="/cliente_pedidos" class="nav-link">Olá <%= usuario.nome %></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/index.html" class="nav-link">Sair</a>
+                                    <a href="/user/sair" class="nav-link">Sair</a>
                                 </li>
 
                                 <li class="nav-item">

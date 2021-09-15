@@ -11,7 +11,6 @@ const ip = '127.0.0.1';
 const port = '3333';
 
 var logado = false;
-var nameUser = '';
 
 const user = new User(axios, ip, port);
 const cat = new Categorias(axios, ip, port);
@@ -25,8 +24,7 @@ module.exports = {
     ad: ad,
     solicit: solicit,
     guardSolicite: guardSolicite,
-    logado: logado,
-    nameUser: nameUser
+    logado: logado
 };
 
 // user.createConsumidor({

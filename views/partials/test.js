@@ -1,1 +1,0 @@
-const logado = require('../../src/scripts/client');
