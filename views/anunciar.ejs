@@ -7,7 +7,7 @@
             <!--Menu da Esquerda-->
             <%- include('./partials/menu_adm.ejs'); %>
             <div class="col-8 mb-5">
-                <form action="/anuncios/create" method="POST">
+                <form action="/anuncios/create" method="POST" enctype="multipart/form-data">
                     
                     <div class="form-floating mb-3">
                         <input class="form-control" type="text" name="txtNome" placeholder=" " autofocus />
@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="form-floating mb-3 col-md-8">
-                        <input class="form-control" type="file" id="txtImagens" placeholder=" " />
+                        <input class="form-control" type="file" id="txtImagens" name='image' placeholder=" " />
                         <label for="txtImagens">Imagens</label>
                     </div>
 

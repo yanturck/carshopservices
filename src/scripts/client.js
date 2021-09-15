@@ -10,6 +10,9 @@ const GuardarSolicitacao = require('../clients/guardar-solicitacao.client');
 const ip = '127.0.0.1';
 const port = '3333';
 
+var logado = false;
+var nameUser = '';
+
 const user = new User(axios, ip, port);
 const cat = new Categorias(axios, ip, port);
 const ad = new Anuncio(axios, ip, port);
@@ -21,7 +24,9 @@ module.exports = {
     cat: cat,
     ad: ad,
     solicit: solicit,
-    guardSolicite: guardSolicite
+    guardSolicite: guardSolicite,
+    logado: logado,
+    nameUser: nameUser
 };
 
 // user.createConsumidor({
@@ -33,16 +38,8 @@ module.exports = {
 // });
 
 // cat.create({
-//     'nome': 'Amortecedores',
-//     'descricao': 'Para produtos novos'
-// });
-// cat.create({
-//     'nome': 'Baterias',
-//     'descricao': 'Para produtos usados'
-// });
-// cat.create({
 //     'nome': 'Filtros',
-//     'descricao': 'Para serviços'
+//     'descricao': 'Para produtos'
 // });
 // cat.create({
 //     'nome': 'Molas',
@@ -70,10 +67,17 @@ module.exports = {
 // });
 // cat.create({
 //     'nome': 'Discos de Freio',
+//     'descricao': 'Para Produtos'
+// });
+// cat.create({
+//     'nome': 'Troca ou manutenção de peça',
 //     'descricao': 'Para serviços'
 // });
 
 // cat.deleteCategory(1);
 // cat.deleteCategory(2);
 
-cat.findAll();
+// cat.findAll();
+
+// ad.findAll();
+// ad.findAllServicos();

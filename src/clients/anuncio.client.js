@@ -12,9 +12,9 @@ class Anuncio {
         .catch(function (error) { console.log("\nAlgo deu errado! :*(\n" + error) });
     }
     
-    findAllItems () {
-        this.axios.get(`http://${this.ip}:${this.port}/anuncios/item`)
-        .then(function (response) { console.log(response.data) })
+    findAllItens () {
+        return this.axios.get(`http://${this.ip}:${this.port}/anuncios/item`)
+        .then(function (response) { return response.data })
         .catch(function (error) { console.log("\nAlgo deu errado! :*(\n" + error) });
     }
     
@@ -25,8 +25,8 @@ class Anuncio {
     }
     
     findAllServicos () {
-        this.axios.get(`http://${this.ip}:${this.port}/anuncios/servico`)
-        .then(function (response) { console.log(response.data) })
+        return this.axios.get(`http://${this.ip}:${this.port}/anuncios/servico`)
+        .then(function (response) { return response.data })
         .catch(function (error) { console.log("\nAlgo deu errado! :*(\n" + error) });
     }
     

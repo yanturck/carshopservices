@@ -40,12 +40,25 @@ exports.createUser = (req, res) => {
 }
 
 exports.auntenticar = (req, res) => {
-    var email = req.body.txtEmail;
-    var senha = req.body.txtSenha;
+    var user = {
+        'email': req.body.txtEmail,
+        'senha': req.body.txtSenha
+    };
 
-    client.user.findUserByEmail(email).then(data => {
-        res.redirect("cliente_pedidos");
+    client.user.autenticarUser(user).then(data => {
+        if(data == 'ok') {
+            res.render("cliente_pedidos");
+            client.logado = true;
+        }
+        else {
+            res.render("log");
+        }
     });
+}
+
+exports.logout = (req, res) => {
+    client.logado = false;
+    res.redirect('/');
 }
 
 exports.deleteUser = (req, res) => {

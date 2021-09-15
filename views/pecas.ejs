@@ -4,18 +4,19 @@
                     <h2>Peças</h2>
                     <div class="row">
                         <ul class="list-group my-3">
+                            <% pecas.forEach(function(peca){ %>
                             <li class="list-group-item">
                                 <div class="row">
                                     <div class="col-2">
                                         <a href="produto.html" class="text-decoration-none"><img src="img/img12.jpg" class="img-fluid" alt=""></a>
                                     </div>
                                     <div class="col-6 d-flex align-items-center justify-content-center">
-                                        <a href="produto.html" class="text-decoration-none"> <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi molestiae cumque nam accusamus dolore quas natus quam hic iste modi, molestias repellat aperiam consequuntur, totam eaque rerum exercitationem maiores eveniet!</p></a>
+                                        <a href="produto.html" class="text-decoration-none"> <p> <%= peca.descricao %> </p></a>
                                     </div>
                                     <div class="col-2 d-flex flex-column align-items-center justify-content-center">
-                                        <s> de R$ 1000,00</s>
+                                        <!-- <s> de R$ 1000,00</s> -->
                                         <h4>
-                                            <span class="badge rounded-pill bg-danger">R$ 500,00</span>
+                                            <span class="badge rounded-pill bg-danger">R$ <%= peca.valor %></span>
                                         </h4>
                                     </div>
                                     <div class="col-2 d-flex align-items-center justify-content-center">
@@ -36,7 +37,9 @@
                                 </div>
                             </li>
 
-                            <li class="list-group-item">
+                            <% }) %>
+
+                            <!-- <li class="list-group-item">
                                 <div class="row">
                                     <div class="col-2">
                                         <a href="produto.html" class="text-decoration-none"><img src="img/img11.jpg" class="img-fluid" alt=""></a>
@@ -98,7 +101,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </li>
+                            </li> -->
 
                             
                         </ul>

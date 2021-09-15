@@ -69,10 +69,10 @@ module.exports = app => {
         // }); 
     });
     
-    app.get('/servicos', (req, res) => {
-        //CARREGAR A PAGINA servicos 
-        res.render('servicos');
-    });
+    // app.get('/servicos', (req, res) => {
+    //     //CARREGAR A PAGINA servicos 
+    //     res.render('servicos');
+    // });
     
     app.get('/promocoes', (req, res) => {
         //CARREGAR A PAGINA promocoes 
@@ -96,6 +96,11 @@ module.exports = app => {
     
     app.get('/produto', (req, res) => {
         //CARREGAR A PAGINA produto 
+        var nome = req.body.txtNome;
+        var valor = req.body.txtValor;
+
+        // console.log(valor);
+
         res.render('produto');
     });
     app.get('/carrinho', (req, res) => {

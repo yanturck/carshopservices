@@ -1,4 +1,3 @@
-const produto = require('../../index');
 const client = require("../scripts/client")
 
 exports.createAd = (req, res) => {
@@ -7,41 +6,59 @@ exports.createAd = (req, res) => {
     var valor = req.body.txtValor;
     var cat = req.body.txtCat;
 
+    var imagem = '';
+    if (req.file) imagem = req.file;
+
     var tipoAd = req.body.txtTipo;
     
     switch(tipoAd) {
         case '1':
             var disp = req.body.txtDisp;
             var dispEntrega = req.body.txtDispEntrega;
-            client.ad.createItem({
-                "descricao": desc,
-                "valor": parseInt(valor),
-                "idCategoria": cat,
-                "nome": titulo,
-                "disponibilidade": disp,
-                "disponibilidadeEntrega": dispEntrega,
-                "userEmail": "yan@discente.ufma.br"
+
+            client.user.verificarUser().then(data => {
+                client.ad.createItem({
+                    "descricao": desc,
+                    "valor": parseInt(valor),
+                    "idCategoria": cat,
+                    "nome": titulo,
+                    "disponibilidade": disp,
+                    "disponibilidadeEntrega": dispEntrega,
+                    "imagem": imagem.filename,
+                    "userEmail": data.email
+                });
             });
             break;
         case '2':
             var dispRealizacao = req.body.txtDispRealizacao;
-            client.ad.createServico({
-                "descricao": desc,
-                "valor": parseInt(valor),
-                "idCategoria": cat,
-                "nome": titulo,
-                "disponibilidadeRealizacao": dispRealizacao,
-                "userEmail": "yan@discente.ufma.br"
+
+            client.user.verificarUser().then(data => {
+                client.ad.createServico({
+                    "descricao": desc,
+                    "valor": parseInt(valor),
+                    "idCategoria": cat,
+                    "nome": titulo,
+                    "disponibilidadeRealizacao": dispRealizacao,
+                    "imagem": imagem.filename,
+                    "userEmail": data.email
+                });
             });
     }
+    res.render("cliente_pedidos");
+}
 
-    client.ad.findAll().then( data => {
-        return data;
+exports.findAllServicos = (req, res) => {
+    client.ad.findAllServicos().then(data => {
+        res.render('servicos', {
+            servicos: data
+        }); 
     });
 }
 
-exports.findAll = (req, res) => {
-    client.ad.findAll().then( data => {
-        produto.produtos = data;
+exports.findAllItens = (req, res) => {
+    client.ad.findAllItens().then(data => {
+        res.render('pecas', {
+            pecas: data
+        }); 
     });
 }

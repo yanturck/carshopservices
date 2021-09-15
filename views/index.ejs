@@ -96,14 +96,14 @@
                                         <i class="bi-suit-heart icone"></i>
                                     </a>
                                     <a href="/produto" class="text-decoration-none">
-                                        <img src="img/cabecote-ap.jpg" class="card-img-top cartao img-fluid">
+                                        <img src="../img/<%= produto.imagem %>" class="card-img-top cartao img-fluid">
                                     </a>
-                                    <div class="card-header">
+                                    <div class="card-header" name='txtValor'>
                                         R$ <%= produto.valor %>
                                     </div>
                                     <div class="card-body">
                                         <h5 class="card-title">
-                                            <a href="/produto" class="text-decoration-none"><%= produto.nome %></a>
+                                            <a href="/produto" class="text-decoration-none" name='txtNome'><%= produto.nome %></a>
                                         </h5>
                                         <p class="card-text truncar">
                                             <%= produto.descricao %>
