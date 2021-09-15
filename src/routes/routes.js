@@ -20,36 +20,6 @@ module.exports = app => {
         res.render('quem-somos');
     });
     
-    /**
-    app.get('/pecas', (req, res) => {
-        //CARREGAR A PAGINA pecas 
-        res.render('pecas');
-    });
-    
-     */
-    
-    app.get('/produto/:id', (req, res) => {
-        //CARREGAR A PAGINA pecas
-        var id = req.params.id;
-        // model_cadastro.findOne({
-        //     where:{id: id}
-        // }).then(peca=>{
-        //     if(peca != undefined){
-        //         //peça achada
-        //         res.render("produto",{
-        //             peca:peca
-        //         });            
-        //     }else{
-        //         res.redirect("/");
-        //     }
-        // }); 
-    });
-    
-    // app.get('/servicos', (req, res) => {
-    //     //CARREGAR A PAGINA servicos 
-    //     res.render('servicos');
-    // });
-    
     app.get('/promocoes', (req, res) => {
         //CARREGAR A PAGINA promocoes 
         res.render('promocoes');
@@ -75,10 +45,9 @@ module.exports = app => {
         var nome = req.body.txtNome;
         var valor = req.body.txtValor;
 
-        // console.log(valor);
-
         res.render('produto');
     });
+
     app.get('/carrinho', (req, res) => {
         //CARREGAR A PAGINA carrinho 
         res.render('carrinho');
@@ -119,12 +88,10 @@ module.exports = app => {
         var txtsenha = req.body.txtsenha;
         res.render('cliente_pedidos',{
             txtemail:txtemail,
-            txtsenha:txtsenha,
-            
+            txtsenha:txtsenha,     
         });
-    
     });
-    
+
     app.get('/cliente_pedidos', (req, res) => {
         //CARREGAR A PAGINA cliente_pedidos 
         var txtemail =" req.body.txtemail";
@@ -132,28 +99,24 @@ module.exports = app => {
         res.render('cliente_pedidos',{
             txtemail:txtemail,
             txtsenha:txtsenha,
-            
         });
-    
     });
     
     app.get('/cliente_favoritos', (req, res) => {
         //CARREGAR A PAGINA cliente_favoritos     
         res.render('cliente_favoritos');
-    
     });
     
     app.get('/cliente_contatos', (req, res) => {
         //CARREGAR A PAGINA cliente_favoritos     
         res.render('cliente_contatos');
-    
     });
     
     app.get('/cliente_dados', (req, res) => {
         //CARREGAR A PAGINA cliente_favoritos     
         res.render('cliente_dados');
-    
     });
+
     app.get('/cliente_endereco', (req, res) => {
         //CARREGAR A PAGINA cliente_favoritos     
         res.render('cliente_endereco');
@@ -163,19 +126,17 @@ module.exports = app => {
         //CARREGAR A PAGINA cliente_favoritos     
         res.render('cadastrar_nova_senha');
     }); 
+
     app.get('/cliente_senha', (req, res) => {
         //CARREGAR A PAGINA cliente_favoritos     
         res.render('cliente_senha');
     });
+
     app.get('/confirmacadnovasenha', (req, res) => {
         //CARREGAR A PAGINA cliente_favoritos     
         res.render('confirmacadnovasenha');
     });
     
-    // app.get('/confirme-cadastro', (req, res) => {
-    //     //CARREGAR A PAGINA cliente_favoritos     
-    //     res.render('confirme-cadastro');
-    // });
     app.get('/confirme-contato', (req, res) => {
         //CARREGAR A PAGINA cliente_favoritos     
         res.render('confirme-contato');
@@ -184,8 +145,7 @@ module.exports = app => {
         //CARREGAR A PAGINA cliente_favoritos     
         res.render('contato');
     });
-    
-    
+        
     app.get('/duvidas-frequentes', (req, res) => {
         //CARREGAR A PAGINA cliente_favoritos     
         res.render('duvidas-frequentes');
@@ -209,15 +169,7 @@ module.exports = app => {
         //CARREGAR A PAGINA cliente_favoritos     
         res.render('termos-de-uso');
     });
-    app.post("/log",(req, res)=>{
-        //CARREGAR A PAGINA cliente_pedidos 
-        //var txtemail = req.body.txtemail;
-        //var txtsenha = req.body.txtsenha;
-        res.redirect("cliente_pedidos");
-    
-    });
-    
-    
+
     app.get('/carrinho', (req, res) => {
         //CARREGAR A PAGINA carrinho
         res.render('carrinho');
